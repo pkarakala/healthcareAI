@@ -342,9 +342,15 @@ main:focus { outline: none; }
 .cta-copy h2 { font-size: 32px; letter-spacing: -1px; margin-bottom: 12px; }
 .cta-copy p { font-size: 17px; opacity: 0.92; margin: 0; }
 .demo-form { display: flex; flex-direction: column; gap: 12px; background: #fff; padding: 26px; border-radius: var(--radius); box-shadow: var(--shadow); }
-.demo-form input { padding: 13px 15px; border: 1px solid var(--line); border-radius: 10px; font-size: 15px; }
-.demo-form input:focus { outline: none; border-color: var(--accent); }
+.demo-form input, .demo-form select { padding: 13px 15px; border: 1px solid var(--line); border-radius: 10px; font-size: 15px; background: #fff; color: var(--ink); }
+.demo-form input:focus, .demo-form select:focus { outline: none; border-color: var(--accent); }
 .demo-form button:disabled { opacity: 0.65; cursor: default; transform: none; }
+.form-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.form-progress span { height: 6px; flex: 1; border-radius: 999px; background: var(--line); transition: background 0.2s ease; }
+.form-progress span.on { background: var(--accent); }
+.form-progress small { flex: 0 0 auto; color: var(--ink-soft); font-size: 12px; font-weight: 600; }
+.form-actions { display: flex; gap: 12px; }
+.form-actions .btn { flex: 1; text-align: center; }
 .form-msg { margin: 0; font-size: 14px; color: var(--ok); font-weight: 600; min-height: 18px; }
 
 /* Footer */

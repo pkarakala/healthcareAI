@@ -154,6 +154,21 @@ export const demo = {
   // Leave empty ("") to keep local demo mode (shows confirmation, sends nothing).
   // Example: "https://formspree.io/f/xxxxabcd"
   endpoint: "https://formspree.io/f/xnjyrvga",
+
+  // Options for the qualifying step of the demo booking flow.
+  roles: [
+    "Pharmacist",
+    "Pharmacy manager / owner",
+    "Office manager",
+    "Provider / prescriber",
+    "Other",
+  ],
+  volumes: [
+    "Under 100 / month",
+    "100–500 / month",
+    "500–1,000 / month",
+    "1,000+ / month",
+  ],
 };
 
 export const analytics = {
