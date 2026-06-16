@@ -1,0 +1,20 @@
+import { security } from "../data/site.js";
+
+export default function Security() {
+  return (
+    <section id="security" className="section section-alt">
+      <div className="container">
+        <h2 className="section-title">Security &amp; compliance</h2>
+        <p className="section-sub">Designed to clear procurement, not get stuck in it.</p>
+        <div className="security-grid">
+          {security.map((item) => (
+            <div key={item.title} className="security-item">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
