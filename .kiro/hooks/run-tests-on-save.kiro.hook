@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Run tests on source change",
+  "description": "Runs the Vitest suite whenever a source or test file is saved, so regressions are caught on each change.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "src/**/*.css"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "export PATH=\"$HOME/.local/node-v22.14.0-darwin-arm64/bin:$PATH\" && npm test",
+    "timeout": 120
+  }
+}
