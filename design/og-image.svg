@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b3d2e"/>
+      <stop offset="0.3" stop-color="#0d6b58"/>
+      <stop offset="0.5" stop-color="#1a8a7a"/>
+      <stop offset="0.7" stop-color="#2d6b8a"/>
+      <stop offset="1" stop-color="#4a3f8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+
+  <!-- content vertically centered in the middle 630px band (y: 285..915) -->
+  <g transform="translate(0, 285)">
+    <!-- brand -->
+    <g transform="translate(80, 60)">
+      <rect width="56" height="56" rx="13" fill="rgba(255,255,255,0.15)"/>
+      <text x="28" y="28" dy="0.34em" text-anchor="middle"
+            font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+            font-size="26" font-weight="800" fill="#7fe6d6">Rx</text>
+      <text x="74" y="28" dy="0.34em"
+            font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+            font-size="30" font-weight="800" fill="#ffffff">RxClear</text>
+    </g>
+
+    <!-- headline -->
+    <text x="80" y="240"
+          font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+          font-size="72" font-weight="800" fill="#ffffff">Prior authorizations</text>
+    <text x="80" y="325"
+          font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+          font-size="72" font-weight="800" fill="#ffffff">approved in <tspan fill="#7fe6d6">minutes</tspan>.</text>
+
+    <!-- subhead -->
+    <text x="80" y="395"
+          font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+          font-size="30" font-weight="400" fill="rgba(255,255,255,0.85)">AI-powered prior authorization for pharmacies and providers.</text>
+
+    <!-- trust chips -->
+    <g transform="translate(80, 450)" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#ffffff">
+      <g>
+        <rect width="230" height="48" rx="24" fill="rgba(255,255,255,0.12)"/>
+        <text x="115" y="24" dy="0.34em" text-anchor="middle">HIPAA Compliant</text>
+      </g>
+      <g transform="translate(250, 0)">
+        <rect width="210" height="48" rx="24" fill="rgba(255,255,255,0.12)"/>
+        <text x="105" y="24" dy="0.34em" text-anchor="middle">SOC 2 Type II</text>
+      </g>
+      <g transform="translate(480, 0)">
+        <rect width="250" height="48" rx="24" fill="rgba(255,255,255,0.12)"/>
+        <text x="125" y="24" dy="0.34em" text-anchor="middle">256-bit Encryption</text>
+      </g>
+    </g>
+  </g>
+</svg>

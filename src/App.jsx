@@ -13,8 +13,9 @@ import Footer from "./components/Footer.jsx";
 export default function App() {
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
         <Trust />
         <HowItWorks />

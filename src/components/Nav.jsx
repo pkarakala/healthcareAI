@@ -33,12 +33,13 @@ export default function Nav() {
           <span className="brand-mark">{brand.mark}</span>
           {brand.rest}
         </a>
-        <nav className="nav-links">
+        <nav className="nav-links" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
               className={active === item.href.slice(1) ? "active" : ""}
+              aria-current={active === item.href.slice(1) ? "true" : undefined}
             >
               {item.label}
             </a>

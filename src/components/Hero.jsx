@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
         <div className="hero-card">
           <div className="hero-card-head">
-            <span className="status-dot" /> Live PA queue
+            <span className="status-dot" aria-hidden="true" /> Live PA queue
           </div>
           <ul className="pa-list">
             {hero.queue.map((row) => (

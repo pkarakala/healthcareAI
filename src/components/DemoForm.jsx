@@ -79,6 +79,7 @@ export default function DemoForm() {
             type="text"
             name="name"
             placeholder="Full name"
+            aria-label="Full name"
             value={form.name}
             onChange={update}
             disabled={submitting}
@@ -87,6 +88,7 @@ export default function DemoForm() {
             type="email"
             name="email"
             placeholder="Work email"
+            aria-label="Work email"
             value={form.email}
             onChange={update}
             disabled={submitting}
@@ -95,6 +97,7 @@ export default function DemoForm() {
             type="text"
             name="org"
             placeholder="Pharmacy or practice"
+            aria-label="Pharmacy or practice"
             value={form.org}
             onChange={update}
             disabled={submitting}
