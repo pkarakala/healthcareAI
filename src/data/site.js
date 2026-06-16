@@ -233,3 +233,42 @@ export const securityDetails = {
     },
   ],
 };
+
+export const pricingDetails = {
+  intro:
+    "Transparent, predictable pricing that scales with your volume. Start free, pay for what you process, and upgrade when you're ready — no surprise invoices.",
+  // Comparison rows across the three plans (Starter / Growth / Enterprise).
+  comparison: [
+    { label: "Monthly prior authorizations", starter: "Up to 50", growth: "Unlimited", enterprise: "Unlimited" },
+    { label: "Locations", starter: "1", growth: "Up to 5", enterprise: "Unlimited" },
+    { label: "Prior auth automation", starter: true, growth: true, enterprise: true },
+    { label: "Automatic appeals", starter: false, growth: true, enterprise: true },
+    { label: "EHR / pharmacy integrations", starter: "Standard", growth: "Standard", enterprise: "Custom" },
+    { label: "Support", starter: "Email", growth: "Priority", enterprise: "Dedicated manager" },
+    { label: "SSO / SAML", starter: false, growth: false, enterprise: true },
+    { label: "Business Associate Agreement (BAA)", starter: false, growth: true, enterprise: true },
+    { label: "Audit log export", starter: false, growth: true, enterprise: true },
+  ],
+  faqs: [
+    {
+      q: "How does per-transaction pricing work?",
+      a: "On the Growth plan you pay a flat rate for each prior authorization RxClear processes. There are no seat fees or long-term commitments — your bill tracks your actual volume.",
+    },
+    {
+      q: "Is there a free trial?",
+      a: "Yes. The Starter plan is free for 14 days and includes up to 50 prior authorizations so you can see results before you commit.",
+    },
+    {
+      q: "What counts as a processed prior authorization?",
+      a: "A PA is counted once when RxClear submits it to a payer. Status checks, follow-ups, and automatic appeals on that same PA are included at no extra charge.",
+    },
+    {
+      q: "Do you offer a BAA?",
+      a: "Yes — a Business Associate Agreement is available on the Growth and Enterprise plans, and is required before any protected health information is processed.",
+    },
+    {
+      q: "Can we cancel anytime?",
+      a: "Yes. Plans are month-to-month unless you opt into an annual Enterprise agreement. You can export your data on the way out.",
+    },
+  ],
+};

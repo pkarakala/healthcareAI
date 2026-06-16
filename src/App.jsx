@@ -22,7 +22,7 @@ export default function App() {
         <Features />
         <ROICalculator />
         <Integrations />
-        <Pricing />
+        <Pricing compareHref={`${import.meta.env.BASE_URL}pricing.html`} />
         <Security />
         <DemoForm />
       </main>

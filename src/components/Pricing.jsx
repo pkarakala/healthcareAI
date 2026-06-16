@@ -1,6 +1,6 @@
 import { pricing } from "../data/site.js";
 
-export default function Pricing() {
+export default function Pricing({ hrefPrefix = "", compareHref = "" }) {
   return (
     <section id="pricing" className="section">
       <div className="container">
@@ -21,7 +21,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href="#demo"
+                href={`${hrefPrefix}#demo`}
                 className={`btn ${plan.featured ? "btn-primary" : "btn-ghost"}`}
                 data-cta={`pricing_${plan.name.toLowerCase()}`}
               >
@@ -30,6 +30,11 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+        {compareHref && (
+          <p className="security-more">
+            <a href={compareHref}>Compare all plans &amp; read pricing FAQ →</a>
+          </p>
+        )}
       </div>
     </section>
   );
