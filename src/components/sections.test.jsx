@@ -81,4 +81,12 @@ describe("Footer", () => {
     const { container } = render(<Footer />);
     expect(within(container).getByText(/HIPAA compliant/i)).toBeInTheDocument();
   });
+
+  it("links to the standalone pages", () => {
+    render(<Footer />);
+    const base = import.meta.env.BASE_URL;
+    expect(screen.getByRole("link", { name: /^Pricing$/i })).toHaveAttribute("href", `${base}pricing.html`);
+    expect(screen.getByRole("link", { name: /^Integrations$/i })).toHaveAttribute("href", `${base}integrations.html`);
+    expect(screen.getByRole("link", { name: /security & compliance/i })).toHaveAttribute("href", `${base}security.html`);
+  });
 });

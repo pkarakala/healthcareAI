@@ -317,3 +317,26 @@ export const integrationsDetails = {
     { title: "Go live", body: "Start submitting and tracking PAs automatically, with our team monitoring the rollout." },
   ],
 };
+
+export const footerLinks = [
+  {
+    heading: "Product",
+    links: [
+      { label: "How it works", href: "#how" },
+      { label: "Features", href: "#features" },
+      { label: "ROI calculator", href: "#roi" },
+    ],
+  },
+  {
+    heading: "Explore",
+    links: [
+      { label: "Integrations", href: "integrations.html" },
+      { label: "Pricing", href: "pricing.html" },
+      { label: "Security & compliance", href: "security.html" },
+    ],
+  },
+  {
+    heading: "Get started",
+    links: [{ label: "Book a demo", href: "#demo" }],
+  },
+];
