@@ -227,6 +227,7 @@ a { color: inherit; text-decoration: none; }
 .demo-form { display: flex; flex-direction: column; gap: 12px; background: #fff; padding: 26px; border-radius: var(--radius); box-shadow: var(--shadow); }
 .demo-form input { padding: 13px 15px; border: 1px solid var(--line); border-radius: 10px; font-size: 15px; }
 .demo-form input:focus { outline: none; border-color: var(--accent); }
+.demo-form button:disabled { opacity: 0.65; cursor: default; transform: none; }
 .form-msg { margin: 0; font-size: 14px; color: var(--ok); font-weight: 600; min-height: 18px; }
 
 /* Footer */

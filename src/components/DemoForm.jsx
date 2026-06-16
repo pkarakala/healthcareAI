@@ -1,24 +1,68 @@
 import { useState } from "react";
+import { demo } from "../data/site.js";
+
+const EMPTY = { name: "", email: "", org: "", company: "" }; // `company` = honeypot
 
 export default function DemoForm() {
-  const [form, setForm] = useState({ name: "", email: "", org: "" });
-  const [msg, setMsg] = useState({ text: "", ok: true });
+  const [form, setForm] = useState(EMPTY);
+  const [status, setStatus] = useState("idle"); // idle | submitting | success | error
+  const [msg, setMsg] = useState("");
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+
+    // Honeypot: real users never fill this hidden field.
+    if (form.company) return;
+
     if (!form.name || !form.email || !form.org) {
-      setMsg({ text: "Please fill in every field.", ok: false });
+      setStatus("error");
+      setMsg("Please fill in every field.");
       return;
     }
-    // Client-side only for now. Wire to a backend / form service before collecting real leads.
-    setMsg({
-      text: `Thanks ${form.name} — we'll reach out at ${form.email} shortly.`,
-      ok: true,
-    });
-    setForm({ name: "", email: "", org: "" });
+
+    // No endpoint configured yet → local demo mode (nothing is sent).
+    if (!demo.endpoint) {
+      setStatus("success");
+      setMsg(`Thanks ${form.name} — we'll reach out at ${form.email} shortly. (Demo mode: not sent)`);
+      setForm(EMPTY);
+      return;
+    }
+
+    setStatus("submitting");
+    setMsg("");
+    try {
+      const res = await fetch(demo.endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          organization: form.org,
+          _subject: "New RxClear demo request",
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setMsg(`Thanks ${form.name} — we'll reach out at ${form.email} shortly.`);
+        setForm(EMPTY);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setStatus("error");
+        setMsg(
+          data?.errors?.[0]?.message ||
+            "Something went wrong. Please try again or email us directly."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setMsg("Network error. Please check your connection and try again.");
+    }
   };
+
+  const submitting = status === "submitting";
 
   return (
     <section id="demo" className="cta">
@@ -37,6 +81,7 @@ export default function DemoForm() {
             placeholder="Full name"
             value={form.name}
             onChange={update}
+            disabled={submitting}
           />
           <input
             type="email"
@@ -44,6 +89,7 @@ export default function DemoForm() {
             placeholder="Work email"
             value={form.email}
             onChange={update}
+            disabled={submitting}
           />
           <input
             type="text"
@@ -51,16 +97,29 @@ export default function DemoForm() {
             placeholder="Pharmacy or practice"
             value={form.org}
             onChange={update}
+            disabled={submitting}
           />
-          <button type="submit" className="btn btn-primary">
-            Request demo
+          {/* Honeypot field — hidden from real users, catches bots */}
+          <input
+            type="text"
+            name="company"
+            value={form.company}
+            onChange={update}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px" }}
+          />
+          <button type="submit" className="btn btn-primary" disabled={submitting}>
+            {submitting ? "Sending…" : "Request demo"}
           </button>
           <p
             className="form-msg"
             role="status"
-            style={{ color: msg.ok ? undefined : "#c0392b" }}
+            aria-live="polite"
+            style={{ color: status === "error" ? "#c0392b" : undefined }}
           >
-            {msg.text}
+            {msg}
           </p>
         </form>
       </div>

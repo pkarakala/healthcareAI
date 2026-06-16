@@ -146,3 +146,12 @@ export const security = [
   { title: "Access controls", body: "Role-based permissions and SSO so the right people see the right data." },
   { title: "Data residency", body: "PHI stays within compliant, US-based infrastructure." },
 ];
+
+export const demo = {
+  // Paste your form endpoint here to start collecting real leads.
+  // Works with Formspree (https://formspree.io), Web3Forms, Getform, Basin, etc.
+  // The endpoint/ID is safe to expose in client code.
+  // Leave empty ("") to keep local demo mode (shows confirmation, sends nothing).
+  // Example: "https://formspree.io/f/xxxxabcd"
+  endpoint: "https://formspree.io/f/xnjyrvga",
+};
