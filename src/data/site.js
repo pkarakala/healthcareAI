@@ -155,3 +155,20 @@ export const demo = {
   // Example: "https://formspree.io/f/xxxxabcd"
   endpoint: "https://formspree.io/f/xnjyrvga",
 };
+
+export const analytics = {
+  // Flip to true once you've set a provider below. Stays off (no network,
+  // no cookies) until then — safe for local dev and pre-launch.
+  enabled: false,
+
+  // "plausible" (cookieless, privacy-first — recommended for healthcare)
+  // or "ga4".
+  provider: "plausible",
+
+  // Plausible settings:
+  domain: "pkarakala.github.io",
+  scriptSrc: "https://plausible.io/js/script.js",
+
+  // GA4 settings (set provider to "ga4" and fill this in):
+  measurementId: "", // e.g. "G-XXXXXXXXXX"
+};

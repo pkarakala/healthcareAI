@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { demo } from "../data/site.js";
+import { track } from "../lib/analytics.js";
 
 const EMPTY = { name: "", email: "", org: "", company: "" }; // `company` = honeypot
 
@@ -24,6 +25,7 @@ export default function DemoForm() {
 
     // No endpoint configured yet → local demo mode (nothing is sent).
     if (!demo.endpoint) {
+      track("demo_submitted", { mode: "demo" });
       setStatus("success");
       setMsg(`Thanks ${form.name} — we'll reach out at ${form.email} shortly. (Demo mode: not sent)`);
       setForm(EMPTY);
@@ -45,6 +47,7 @@ export default function DemoForm() {
       });
 
       if (res.ok) {
+        track("demo_submitted", { mode: "live" });
         setStatus("success");
         setMsg(`Thanks ${form.name} — we'll reach out at ${form.email} shortly.`);
         setForm(EMPTY);

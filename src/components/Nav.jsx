@@ -45,7 +45,7 @@ export default function Nav() {
             </a>
           ))}
         </nav>
-        <a href="#demo" className="btn btn-primary btn-sm">
+        <a href="#demo" className="btn btn-primary btn-sm" data-cta="nav">
           Book a demo
         </a>
       </div>

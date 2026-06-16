@@ -33,7 +33,7 @@ export default function Hero() {
           </h1>
           <p className="lead">{hero.lead}</p>
           <div className="hero-cta">
-            <a href="#demo" className="btn btn-primary">
+            <a href="#demo" className="btn btn-primary" data-cta="hero">
               Book a demo
             </a>
             <a href="#roi" className="btn btn-ghost">

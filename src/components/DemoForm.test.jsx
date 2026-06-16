@@ -2,6 +2,9 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import DemoForm from "./DemoForm.jsx";
 import { demo } from "../data/site.js";
+import { track } from "../lib/analytics.js";
+
+vi.mock("../lib/analytics.js", () => ({ track: vi.fn() }));
 
 function fill({ name = "Jane Doe", email = "jane@clinic.com", org = "Acme Pharmacy" } = {}) {
   fireEvent.change(screen.getByPlaceholderText("Full name"), { target: { value: name } });
@@ -43,6 +46,7 @@ describe("DemoForm", () => {
       organization: "Acme Pharmacy",
     });
     expect(await screen.findByText(/Thanks Jane Doe/i)).toBeInTheDocument();
+    expect(track).toHaveBeenCalledWith("demo_submitted", { mode: "live" });
   });
 
   it("shows an error message when the server rejects", async () => {

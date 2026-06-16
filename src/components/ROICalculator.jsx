@@ -72,7 +72,7 @@ export default function ROICalculator() {
               <div className="roi-value">{money(yearly)}</div>
               <div className="roi-label">saved / year</div>
             </div>
-            <a href="#demo" className="btn btn-primary roi-cta">
+            <a href="#demo" className="btn btn-primary roi-cta" data-cta="roi">
               Book a demo to lock in these savings
             </a>
             <p className="roi-note">{roi.note}</p>

@@ -23,6 +23,7 @@ export default function Pricing() {
               <a
                 href="#demo"
                 className={`btn ${plan.featured ? "btn-primary" : "btn-ghost"}`}
+                data-cta={`pricing_${plan.name.toLowerCase()}`}
               >
                 {plan.cta}
               </a>
