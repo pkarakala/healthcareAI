@@ -32,7 +32,7 @@ export function initAnalytics() {
 
   // Track every "Book a demo" CTA click, regardless of which section it's in.
   document.addEventListener("click", (e) => {
-    const cta = e.target.closest?.('a[href="#demo"]');
+    const cta = e.target.closest?.('a[href$="#demo"]');
     if (cta) track("demo_cta_click", { location: cta.dataset.cta || "unknown" });
   });
 }

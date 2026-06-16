@@ -18,4 +18,17 @@ describe("Nav", () => {
     const cta = screen.getByRole("link", { name: /book a demo/i });
     expect(cta).toHaveAttribute("href", "#demo");
   });
+
+  it("prefixes every link when given an hrefPrefix (for sub-pages)", () => {
+    render(<Nav hrefPrefix="/healthcareAI/" />);
+    expect(screen.getByRole("link", { name: /book a demo/i })).toHaveAttribute(
+      "href",
+      "/healthcareAI/#demo"
+    );
+    const first = nav[0];
+    expect(screen.getByRole("link", { name: first.label })).toHaveAttribute(
+      "href",
+      `/healthcareAI/${first.href}`
+    );
+  });
 });

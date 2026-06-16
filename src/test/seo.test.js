@@ -36,3 +36,22 @@ describe("index.html SEO & social meta", () => {
     expect(html).toContain('name="twitter:image"');
   });
 });
+
+describe("security.html SEO & social meta", () => {
+  let page = "";
+  beforeAll(() => {
+    page = readFileSync(resolve(process.cwd(), "security.html"), "utf-8");
+  });
+
+  it("has a security-specific title and its own canonical", () => {
+    expect(page).toMatch(/<title>.*Security.*RxClear.*<\/title>/);
+    expect(page).toMatch(
+      /rel="canonical"\s+href="https:\/\/pkarakala\.github\.io\/healthcareAI\/security\.html"/
+    );
+  });
+
+  it("has Open Graph and Twitter card tags", () => {
+    expect(page).toContain('property="og:title"');
+    expect(page).toMatch(/name="twitter:card"\s+content="summary_large_image"/);
+  });
+});

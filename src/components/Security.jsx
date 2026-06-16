@@ -1,5 +1,7 @@
 import { security } from "../data/site.js";
 
+const HOME = import.meta.env.BASE_URL;
+
 export default function Security() {
   return (
     <section id="security" className="section section-alt">
@@ -14,6 +16,9 @@ export default function Security() {
             </div>
           ))}
         </div>
+        <p className="security-more">
+          <a href={`${HOME}security.html`}>See full security &amp; compliance details →</a>
+        </p>
       </div>
     </section>
   );

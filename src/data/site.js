@@ -172,3 +172,64 @@ export const analytics = {
   // GA4 settings (set provider to "ga4" and fill this in):
   measurementId: "", // e.g. "G-XXXXXXXXXX"
 };
+
+export const securityDetails = {
+  intro:
+    "RxClear handles protected health information, so security isn't a feature — it's the foundation. This page documents the controls, certifications, and practices that let your security and procurement teams say yes with confidence.",
+  sections: [
+    {
+      title: "Compliance & certifications",
+      points: [
+        "HIPAA compliant; Business Associate Agreement (BAA) available to every customer.",
+        "SOC 2 Type II — independently audited controls for security, availability, and confidentiality.",
+        "Annual third-party penetration testing with remediation tracking.",
+        "Security and compliance documentation available under NDA on request.",
+      ],
+    },
+    {
+      title: "Data protection",
+      points: [
+        "Encryption in transit with TLS 1.2+.",
+        "Encryption at rest with AES-256.",
+        "PHI logically segregated per customer.",
+        "Configurable data retention and documented deletion on contract termination.",
+      ],
+    },
+    {
+      title: "Identity & access",
+      points: [
+        "Role-based access control (RBAC) with least-privilege defaults.",
+        "Single sign-on (SSO) via SAML/OIDC for enterprise customers.",
+        "Multi-factor authentication enforced for all administrative access.",
+        "Internal access to PHI is logged, reviewed, and granted on a need-to-know basis.",
+      ],
+    },
+    {
+      title: "Infrastructure & availability",
+      points: [
+        "Hosted on US-based, SOC 2 / ISO 27001 certified cloud infrastructure.",
+        "PHI remains within US data residency boundaries.",
+        "Automated, encrypted backups with tested restore procedures.",
+        "Redundancy across availability zones for resilience.",
+      ],
+    },
+    {
+      title: "Monitoring & incident response",
+      points: [
+        "Centralized, tamper-evident audit logging, exportable for your compliance team.",
+        "Continuous monitoring and alerting for anomalous activity.",
+        "Documented incident response plan with defined breach-notification timelines.",
+        "Vendor and subprocessor risk reviews.",
+      ],
+    },
+    {
+      title: "Privacy & responsible AI",
+      points: [
+        "PHI is never used to train shared or third-party models.",
+        "Data is processed only to deliver the service you've contracted for.",
+        "Clear subprocessor list available on request.",
+        "Privacy-by-design review for every new feature that touches PHI.",
+      ],
+    },
+  ],
+};

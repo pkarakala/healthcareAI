@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { brand, nav } from "../data/site.js";
 
-export default function Nav() {
+export default function Nav({ hrefPrefix = "" }) {
   const [active, setActive] = useState("");
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a href="#top" className="brand">
+        <a href={`${hrefPrefix}#top`} className="brand">
           <span className="brand-mark">{brand.mark}</span>
           {brand.rest}
         </a>
@@ -37,7 +37,7 @@ export default function Nav() {
           {nav.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={`${hrefPrefix}${item.href}`}
               className={active === item.href.slice(1) ? "active" : ""}
               aria-current={active === item.href.slice(1) ? "true" : undefined}
             >
@@ -45,7 +45,7 @@ export default function Nav() {
             </a>
           ))}
         </nav>
-        <a href="#demo" className="btn btn-primary btn-sm" data-cta="nav">
+        <a href={`${hrefPrefix}#demo`} className="btn btn-primary btn-sm" data-cta="nav">
           Book a demo
         </a>
       </div>

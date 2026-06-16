@@ -245,6 +245,30 @@ main:focus { outline: none; }
 .security-item { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
 .security-item h3 { font-size: 17px; margin-bottom: 8px; }
 .security-item p { color: var(--ink-soft); margin: 0; font-size: 15px; }
+.security-more { text-align: center; margin: 36px 0 0; }
+.security-more a { color: var(--accent-dark); font-weight: 600; }
+.security-more a:hover { text-decoration: underline; }
+
+/* Sub-page header */
+.page-header {
+  padding: 64px 0 48px;
+  background: linear-gradient(135deg, #0b3d2e 0%, #0d6b58 30%, #1a8a7a 50%, #2d6b8a 70%, #4a3f8a 100%);
+  color: #ffffff;
+}
+.page-header .eyebrow { margin-top: 8px; }
+.page-header h1 { font-size: 44px; letter-spacing: -1.5px; margin-bottom: 16px; color: #fff; }
+.page-header .lead { color: rgba(255, 255, 255, 0.88); max-width: 760px; }
+.back-link { display: inline-block; color: rgba(255, 255, 255, 0.8); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.back-link:hover { color: #fff; }
+
+/* Detail cards (sub-pages) */
+.detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.detail-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+.detail-card h2 { font-size: 20px; margin-bottom: 14px; color: var(--accent-dark); }
+.detail-card ul { list-style: none; margin: 0; padding: 0; }
+.detail-card li { position: relative; padding: 8px 0 8px 26px; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+.detail-card li:last-child { border-bottom: none; }
+.detail-card li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
 
 /* CTA / demo */
 .cta { padding: 72px 0; background: linear-gradient(135deg, #0b3d2e 0%, #0d6b58 30%, #1a8a7a 50%, #2d6b8a 70%, #4a3f8a 100%); color: #fff; }
@@ -267,7 +291,7 @@ main:focus { outline: none; }
 /* Responsive */
 @media (max-width: 900px) {
   .hero-inner, .roi, .cta-inner { grid-template-columns: 1fr; }
-  .steps, .feature-grid, .integration-cols, .pricing-grid, .security-grid { grid-template-columns: 1fr; }
+  .steps, .feature-grid, .integration-cols, .pricing-grid, .security-grid, .detail-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 38px; }
   .nav-links { display: none; }
   .price-card.featured { transform: none; }
