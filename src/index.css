@@ -323,6 +323,19 @@ main:focus { outline: none; }
 .faq-item[open] summary::after { content: "–"; }
 .faq-item p { margin: 0 0 16px; color: var(--ink-soft); }
 
+/* Integration chips (integrations page) */
+.int-desc { color: var(--ink-soft); margin: 0 0 16px; font-size: 15px; }
+.int-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.int-chip {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 /* CTA / demo */
 .cta { padding: 72px 0; background: linear-gradient(135deg, #0b3d2e 0%, #0d6b58 30%, #1a8a7a 50%, #2d6b8a 70%, #4a3f8a 100%); color: #fff; }
 .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }

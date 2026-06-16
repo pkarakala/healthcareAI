@@ -12,6 +12,7 @@ export default defineConfig({
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
         security: fileURLToPath(new URL("./security.html", import.meta.url)),
         pricing: fileURLToPath(new URL("./pricing.html", import.meta.url)),
+        integrations: fileURLToPath(new URL("./integrations.html", import.meta.url)),
       },
     },
   },

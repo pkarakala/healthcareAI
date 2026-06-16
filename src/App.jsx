@@ -21,7 +21,7 @@ export default function App() {
         <HowItWorks />
         <Features />
         <ROICalculator />
-        <Integrations />
+        <Integrations moreHref={`${import.meta.env.BASE_URL}integrations.html`} />
         <Pricing compareHref={`${import.meta.env.BASE_URL}pricing.html`} />
         <Security />
         <DemoForm />

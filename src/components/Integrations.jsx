@@ -1,6 +1,6 @@
 import { integrations } from "../data/site.js";
 
-export default function Integrations() {
+export default function Integrations({ moreHref = "" }) {
   return (
     <section id="integrations" className="section section-alt">
       <div className="container">
@@ -20,6 +20,11 @@ export default function Integrations() {
             </div>
           ))}
         </div>
+        {moreHref && (
+          <p className="security-more">
+            <a href={moreHref}>See all integrations &amp; how setup works →</a>
+          </p>
+        )}
       </div>
     </section>
   );

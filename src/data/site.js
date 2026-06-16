@@ -272,3 +272,33 @@ export const pricingDetails = {
     },
   ],
 };
+
+export const integrationsDetails = {
+  intro:
+    "RxClear plugs into the systems your team already lives in — no rip-and-replace. We connect to your EHR or pharmacy system, the payer and PA networks, and keep everything in sync so prior authorizations move without manual re-entry.",
+  categories: [
+    {
+      heading: "EHR / EMR",
+      description:
+        "Pull prescription and clinical context directly so PAs are filed with the right supporting information.",
+      items: ["Epic", "Cerner (Oracle Health)", "athenahealth", "eClinicalWorks", "NextGen", "Allscripts"],
+    },
+    {
+      heading: "Pharmacy systems",
+      description:
+        "Connect at the dispensing workflow to catch PAs the moment a claim rejects.",
+      items: ["PioneerRx", "Liberty", "QS/1", "BestRx", "Computer-Rx", "Rx30"],
+    },
+    {
+      heading: "Payer & PA networks",
+      description:
+        "Submit and track across the networks and portals payers actually use.",
+      items: ["CoverMyMeds", "Surescripts", "Major PBM portals", "Commercial payers", "Medicare", "Medicaid"],
+    },
+  ],
+  onboarding: [
+    { title: "Connect", body: "We establish a secure connection to your EHR or pharmacy system — typically in a day." },
+    { title: "Map", body: "We map your formats and workflows so RxClear reads prescriptions and files PAs correctly." },
+    { title: "Go live", body: "Start submitting and tracking PAs automatically, with our team monitoring the rollout." },
+  ],
+};
