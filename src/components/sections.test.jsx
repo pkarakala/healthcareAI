@@ -35,7 +35,7 @@ describe("HowItWorks", () => {
 });
 
 describe("Features", () => {
-  it("renders every feature and marks exactly the live one", () => {
+  it("renders every feature and marks the V1 live ones", () => {
     const { container } = render(<Features />);
     features.forEach((f) => expect(screen.getByText(f.title)).toBeInTheDocument());
     const liveCards = container.querySelectorAll(".feature-card.live");

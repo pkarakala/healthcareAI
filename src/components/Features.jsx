@@ -5,9 +5,7 @@ export default function Features() {
     <section id="features" className="section section-alt">
       <div className="container">
         <h2 className="section-title">A platform, not a one-trick tool</h2>
-        <p className="section-sub">
-          Prior auth is the entry point. Here's where we're headed.
-        </p>
+        <p className="section-sub">Available now, with more on the way.</p>
         <div className="feature-grid">
           {features.map((f) => (
             <div key={f.title} className={`feature-card${f.live ? " live" : ""}`}>

@@ -64,29 +64,33 @@ export const steps = [
 export const features = [
   {
     title: "Prior auth automation",
-    body: "Submit, track, and appeal PAs across payers without manual paperwork.",
+    body: "Built for pharmacies — submit prior authorizations across payers with the right clinical criteria attached, automatically. No manual paperwork.",
+    tag: "Available now",
+    live: true,
+  },
+  {
+    title: "Denial management & appeals",
+    body: "When a PA is denied, RxClear files an evidence-backed appeal automatically and tracks it to resolution.",
     tag: "Available now",
     live: true,
   },
   {
     title: "Formulary lookups",
     body: "Instantly see covered alternatives before a prescription is even sent.",
-    tag: "On the roadmap",
+    tag: "Upcoming",
+    live: false,
   },
   {
     title: "Real-time benefit checks",
     body: "Show patient cost and coverage at the point of care.",
-    tag: "On the roadmap",
-  },
-  {
-    title: "Denial management",
-    body: "Surface denial patterns and resolve them before they pile up.",
-    tag: "On the roadmap",
+    tag: "Upcoming",
+    live: false,
   },
   {
     title: "Patient notifications",
     body: "Keep patients informed automatically as their PA moves forward.",
-    tag: "On the roadmap",
+    tag: "Upcoming",
+    live: false,
   },
 ];
 
@@ -338,5 +342,13 @@ export const footerLinks = [
   {
     heading: "Get started",
     links: [{ label: "Book a demo", href: "#demo" }],
+  },
+  {
+    heading: "Legal",
+    links: [
+      { label: "Terms of Service", href: "terms.html" },
+      { label: "Privacy Policy", href: "privacy.html" },
+      { label: "HIPAA Compliance", href: "hipaa.html" },
+    ],
   },
 ];
